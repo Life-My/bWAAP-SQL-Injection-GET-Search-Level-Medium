@@ -1,6 +1,6 @@
 ## bWAAP SQL GET Search Level Medium
 Movies kısmına `'` karakteri koyuyoruz ve hata alamadığımız görüyoruz.
-![](test/images/first.png)
+![](/images/error.jpeg)
 Bundan anlıyoruz ki `'` işaretini escapliyor. SQL sorgumuzun oluştuğu son hal ise aşağıdaki gibi olmaktadır;
 ```SQL
 SELECT * FROM movies WHERE mname LIKE '%\'%'

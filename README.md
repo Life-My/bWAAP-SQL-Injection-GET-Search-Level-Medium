@@ -25,7 +25,9 @@ XAMPP yönetim panelinden my.ini konfigürasyon dosyasını açalım ve characte
 ###### bWAAP SQL Injection (GET/Search)
 
 Uygulamamızda rastgele birşeyler aratalım ve url in title kısmını `title=%bf%27` olarak değiştirlerim.
+
 ![](/images/error.jpeg)
+
 Tek tırnak işaretimiz fazla olduğu için SQL hatası aldık.Url in title kısmını `title=%bf%27or1=1--+` değiştirirsek artık hata almadığımızı ve iki koşuldan birisi doğru olduğu için tüm filmleri görmüş oluyoruz.
 
 ![](/images/or1=1.jpeg)
@@ -44,3 +46,8 @@ Users isminde tablo bulduğumuz için klonları tahmin edebiliriz.Title ımızı
 `title=%bf%27%20UNION%20SELECT%20NULL,login,password,NULL,NULL,NULL,NULL%20FROM%20users--+`
 
 ![](/images/users.jpeg)
+
+###### Kaynak
+
+https://omercitak.com/injection-saldirilarinda-mysql_real_escape_string-ve-addslashes-bypass/
+https://shiflett.org/blog/2006/addslashes-versus-mysql-real-escape-string

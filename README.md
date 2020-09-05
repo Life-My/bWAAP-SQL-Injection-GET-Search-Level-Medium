@@ -1,4 +1,4 @@
-## bWAAP SQL Injection (GET/Search) Level Medium
+## bWAPP SQL Injection (GET/Search) Level Medium
 Movies kısmına `'` karakteri koyuyoruz ve hata alamadığımız görüyoruz.
 
 ![](/images/first.PNG)
@@ -22,7 +22,7 @@ XAMPP yönetim panelinden my.ini konfigürasyon dosyasını açalım ve characte
 [Ömer Çıtak](https://omercitak.com/):
 >Hex karşılığı 0xbf5c olan “¿\” karakteri, utf 8 charsetinde 2 karakter, GBK charsetinde 1 karakter olarak algılanıyor. İnjection saldırısında sorguya tek tırnak, yani 0x27 gönderdiğiniz vakit mysql_real_escape_string veya addslashes fonksiyonlarımız bizim tırnağımızı “\’” haline çeviriyor. Tırnaktan önce “¿” (0xbf) karakterini gönderdiğimizde yani “¿’” (0xbf27) karakterini gönderdiğimizde, tırnaktan önce \ eklendiğinden gönderdiğimiz karakter “¿\’” (0xbf5c27) halini alıyor. GBK charseti “¿\” karakterini tek karakter olarak aldıladığından sondaki tırnağımız boşa çıkıyor, böylece sorgunun gidişatını değiştirmiş oluyorsunuz. Sonrasında injection ile sorguyu istediğimiz şekle sokabiliriz.
 
-###### bWAAP SQL Injection (GET/Search)
+###### bWAPP SQL Injection (GET/Search)
 
 Uygulamamızda rastgele birşeyler aratalım ve url in title kısmını `title=%bf%27` olarak değiştirlerim.
 
@@ -40,7 +40,7 @@ Kolon sayımızı bulduğumuza göre UNION sorgumuzu çalıştırabiliriz.Tablo 
 Sırada column ismini bulamız gerekli ama bunu maalesef ki başaramıyoruz çünkü tırnak karakterini escaplemek için `%bf`kullanmamız gerekli ve bu karakter tablo ismimizin içine giriyor ve tablo ismimizi bozuyor.
 
 Örnek:table_name='' olarak string içine yazmamız gerek tablo ismi aşağıdaki gibi tablo ismimizin sonuna %bf karakteri geliyor.
-**`title=%bf%27%20UNION%20SELECT%20NULL,column_name,NULL,NULL,NULL,NULL,NULL%20FROM%20information_schema.columns WHERE `_table_name=%bf%27tablename%bf%27--+**
+**`title=%bf%27%20UNION%20SELECT%20NULL,column_name,NULL,NULL,NULL,NULL,NULL%20FROM%20information_schema.columns WHERE `_table_name=%bf%27tablename%bf%27_--+**
 
 Users isminde tablo bulduğumuz için klonları tahmin edebiliriz.Title ımızı değiştirerek kullanıcı adı ve parolayı çekiyoruz. 
 `title=%bf%27%20UNION%20SELECT%20NULL,login,password,NULL,NULL,NULL,NULL%20FROM%20users--+`

@@ -15,7 +15,7 @@ XAMPP yönetim panelinden my.ini konfigürasyon dosyasını açalım ve characte
 
 ![](/images/sqlconf1.png)
 
-![](/images/sqlconf2.png)
+![](/images/sqlconfig2.PNG)
 
 ###### Addslashes
 

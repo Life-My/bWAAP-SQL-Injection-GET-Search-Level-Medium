@@ -50,4 +50,5 @@ Users isminde tablo bulduğumuz için klonları tahmin edebiliriz.Title ımızı
 ###### Kaynak
 
 https://omercitak.com/injection-saldirilarinda-mysql_real_escape_string-ve-addslashes-bypass/
+
 https://shiflett.org/blog/2006/addslashes-versus-mysql-real-escape-string
